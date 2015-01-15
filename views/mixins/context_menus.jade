@@ -6,6 +6,12 @@ mixin battlefield_context_menu()
       li
         a(data-action='untapAll', href='#', tabindex='-1') Untap all
 
+mixin battlefield_menu()
+  div#battlefield_context_menu.show
+    ul.nav.navbar-nav(role='menu', aria-labelledby='battlefield_context_menu')
+      li
+        a(data-action='untapAll', href='#', tabindex='-1') Untap all
+
 mixin library_context_menu()
   div#library_context_menu.dropdown.clearfix.context-menu
     ul.dropdown-menu(role='menu', aria-labelledby='library_context_menu', style='display:block; position:static; margin-bottom:5px;')
