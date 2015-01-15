@@ -14,6 +14,7 @@
 
     // Selectors
     var $trigger = $('#chat_trigger'),
+        $close = $('#chat_close'),
         $chat = $('#chat_container'),
         $messages = $('#chat_messages'),
         $new_message = $('#chat_new_message'),
@@ -25,6 +26,11 @@
     // Opening chat
     $trigger.click(function() {
       $chat.removeClass('hide');
+    });
+
+    // close chat
+    $close.click(function() {
+      $chat.addClass('hide');
     });
 
     // Emitters

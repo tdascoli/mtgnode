@@ -6,10 +6,22 @@ html
   //- Viewport mobile tag for sensible mobile support
   meta(name="viewport",content="width=device-width, initial-scale=1, maximum-scale=1")
   link(rel="stylesheet", type="text/css", href="/js/bower/bootstrap/dist/css/bootstrap.min.css")
+  link(rel="stylesheet", type="text/css", href="/styles/alv-ch-bootstrap.min.css")
   link(rel="stylesheet", type="text/css", href="/styles/mtgnode.css")
 
-  body
-    block body
+  body.fluid
+
+    div#topnav.topnav
+      div.navbar.navbar-inverse.navbar-fixed-top
+        div.container
+          div.navbar-header
+            div.navbar-brand.alv
+              span mtg-node
+
+          block navigation
+
+    div.container
+      block body
 
     // Modals
     block modals
@@ -33,6 +45,7 @@ html
     script(type="text/javascript", src="/js/bower/handlebars/handlebars.min.js")
     script(type="text/javascript", src="/js/bower/lodash/dist/lodash.min.js")
     script(type="text/javascript", src="/js/src/generic/utilities.js")
+    script(type="text/javascript", src="/js/src/simple/logout.js")
     script(type="text/javascript", src="/js/src/mtgnode.js")
 
     // Contextual Js

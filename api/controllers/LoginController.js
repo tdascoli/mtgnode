@@ -21,6 +21,13 @@ exports.login = function(req, res) {
   });
 };
 
+exports.logout = function(req, res) {
+
+  // Killing last session
+  req.session.authenticated = false;
+
+};
+
 // Ajax Connection Attempt
 exports.authenticate = function(req, res) {
 

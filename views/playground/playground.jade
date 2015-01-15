@@ -8,6 +8,18 @@ include ../mixins/exposure
 include ../templates/cards
 include ../templates/counters
 
+block navigation
+  div.nav.navbar-nav
+    p.navbar-text [GAME-NAME]
+
+  ul.subnavbar.nav.navbar-nav.navbar-highlight.navbar-right
+    li
+      a.pointer(href='/lobby?pause') Pause Game
+    li
+      a.pointer(href='/lobby?quit') Quit Game
+    li
+      a.pointer(href='#logout') Log out
+
 block body
   +chat_widget()
   div#mainframe.clearfix

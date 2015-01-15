@@ -1,17 +1,28 @@
 extends ../layout
 
+block navigation
+  ul.nav.navbar-nav
+    li.active
+      a.pointer(href='/lobby') Lobby
+    li
+      a.pointer(href='/deck-builder') Deck Builder
+
+  ul.subnavbar.nav.navbar-nav.navbar-highlight.navbar-right
+    li
+      a.pointer(href='#host_game_modal', data-toggle='modal') Host Game
+    li
+      a.pointer(href='/playground/debug') Game Debug
+    li
+      a.pointer(href='#logout') Log out
+
 block body
   div#mainframe
-    p Welcome to the Lobby #{SESSION.username}
-    br
-    a(href='/deck-builder') Deck Builder
-    br
-    a(href='/playground/debug') Game Debug
+    h2 Welcome to the Lobby #{SESSION.username}
+
     p Current Games :
     div.well
       ul#game_list
-    div
-      a.btn.btn-default(href='#host_game_modal', data-toggle='modal') Host Game
+
     div#host_game_modal.modal.fade
       div.modal-dialog
         div.modal-content
@@ -20,8 +31,8 @@ block body
           div.modal-body
             input#host_game_name.form-control(type='text')
           div.modal-footer
-            button.btn(type='button', data-dismiss='modal', aria-hidden='true') Close
-            button.btn.btn-info(type='button', id='host_game') Start
+            button.btn.btn-default(type='button', data-dismiss='modal', aria-hidden='true') Close
+            button.btn.btn-primary(type='button', id='host_game') Start
 
 block contextual_js
   script(type="text/javascript", src="/js/src/generic/realtime.js")

@@ -6,6 +6,17 @@ include ../mixins/plugins
 include ../mixins/exposure
 include ../templates/cards
 
+block navigation
+  ul.nav.navbar-nav
+    li
+      a.pointer(href='/lobby') Lobby
+    li.active
+      a.pointer(href='/deck-builder') Deck Builder
+
+  ul.subnavbar.nav.navbar-nav.navbar-highlight.navbar-right
+    li
+      a.pointer(href='#logout') Log out
+
 block body
   div#mainframe
     div#helper_block

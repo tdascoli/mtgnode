@@ -7,21 +7,28 @@
 |   Author : Yomguithereal
 |   Version : 1.0
 */
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+body, html {
+  font-family: 'Roboto', sans-serif;
+}
+
 BODY {
-  margin:0px;
+  margin:0;
+  padding-top: 51px;
 }
 
 #mainframe {
-  margin: 0px auto;
+  margin: 0 auto;
   margin-top:10px;
-  padding:0px;
+  padding:0;
   width: 1289px;
   min-height:760px;
 }
 
 #helper_block {
   width: @playground-left-panel-width;
-  margin:0px;
+  margin:0;
   height:760px;
   float:left;
   border:1px solid black;
@@ -46,7 +53,7 @@ BODY {
 
 #deck_builder_container {
   width: 1039px;
-  margin: 0px;
+  margin: 0;
   height:760px;
   float:right;
   border:1px solid black;
@@ -101,12 +108,12 @@ BODY {
   height:@card-min-height;
 
   &.top {
-    top:0px;
+    top:0;
     border-bottom:1px solid black;
   }
 
   &.bottom {
-    bottom:0px;
+    bottom:0;
     border-top: 1px solid black;
   }
 }
@@ -122,14 +129,14 @@ BODY {
   width:@card-min-width;
   height:@card-min-height;
   position: absolute;
-  left: 0px;
+  left: 0;
 
   &.top {
     border-right:1px solid black;
   }
 
   &.bottom {
-    bottom:0px;
+    bottom:0;
     border-right:1px solid black;
     border-top:1px solid black;
   }
@@ -146,7 +153,7 @@ BODY {
   }
 
   &.bottom {
-    bottom:0px;
+    bottom:0;
     border-right:1px solid black;
     border-top:1px solid black;
   }
@@ -164,7 +171,7 @@ BODY {
   }
 
   &.bottom  {
-    bottom:0px;
+    bottom:0;
     border-top:1px solid black;
     border-right:1px solid black;
   }
@@ -178,7 +185,7 @@ BODY {
 }
 
 #top_game_zone {
-  bottom:0px;
+  bottom:0;
 }
 
 .context-menu {
@@ -195,8 +202,8 @@ BODY {
 
 .card-container {
   position:absolute;
-  top:0px;
-  left:0px;
+  top:0;
+  left:0;
 }
 
 .valid {
@@ -213,8 +220,13 @@ BODY {
 
 #chat_container > .modal-content{
   width: 300px;
-  height: 230px;
+  height: 260px;
   cursor: pointer;
+}
+
+#chat_close {
+  text-align: right;
+  display: block;
 }
 
 #chat_messages {
@@ -226,3 +238,41 @@ BODY {
 #deck_to_parse {
   height: 400px;
 }
+
+// login
+body.login {
+  background-color: #fff;
+}
+.login-screen {
+  padding-top: 5.2em;
+}
+
+.login-form {
+  width: 350px;
+  margin: 0 auto;
+  padding: 24px 23px 20px;
+  background-color: #eee;
+  border-radius: 6px;
+}
+.login-form h3 {
+  margin: 0 0 15px 0;
+  color: #000;
+  font-weight: 700;
+}
+.login-form input {
+  border: none;
+  margin-bottom: 0.809em;
+}
+.login-link {
+  display: block;
+  margin-top: 15px;
+  font-size: 0.809em;
+  color: #BFC9CA;
+  text-align: center;
+  cursor: pointer;
+}
+
+.form-control + .input-group-btn button {
+  color: #fff;
+}
+
