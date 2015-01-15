@@ -22,29 +22,28 @@ BODY {
   margin: 0 auto;
   margin-top:10px;
   padding:0;
-  width: 1289px;
   min-height:760px;
 }
 
 #helper_block {
   width: @playground-left-panel-width;
   margin:0;
-  height:760px;
+  height:780px;
   float:left;
   border:1px solid black;
   border-right:none;
 }
 
 #top_helper_block, #bottom_helper_block {
-  height:200px;
+  height:363px;
 }
 
 #top_helper_block {
-  border-bottom : 1px solid black;
+  //border-bottom : 1px solid black;
 }
 
 #bottom_helper_block {
-  border-top : 1px solid black;
+  //border-top : 1px solid black;
 }
 
 #card_viewer_block {
@@ -54,7 +53,7 @@ BODY {
 #deck_builder_container {
   width: 1039px;
   margin: 0;
-  height:760px;
+  height:780px;
   float:right;
   border:1px solid black;
 }
@@ -76,9 +75,8 @@ BODY {
 }
 
 #game_block {
-  width: 974px;
-  margin-left: @playground-left-panel-width;
-  height:760px;
+  width: calc(~'100% - 250px');
+  height:780px;
   border:1px solid black;
 }
 
@@ -87,13 +85,13 @@ BODY {
 }
 
 #top_game_block {
-  height: 380px;
+  height: 363px;
   position: relative;
 }
 
 #bottom_game_block {
-  height: 379px;
-  border-top:1px solid black;
+  height: 364px;
+  //border-top:1px solid black;
   position: relative;
 }
 
@@ -104,7 +102,7 @@ BODY {
 
 .library-and-hand {
   position:absolute;
-  width:974px;
+  width:100%;
   height:@card-min-height;
 
   &.top {
@@ -179,7 +177,7 @@ BODY {
 
 .game-emplacement {
   height:268px;
-  width:974px;
+  width:100%;
   position:absolute;
   z-index:10;
 }
