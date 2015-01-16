@@ -12,8 +12,8 @@ mixin confirm_modal(id, title, text, status, no, yes)
           h3= title
         div.modal-body= text
         div.modal-footer
-          button(type='button', class='btn', data-dismiss='modal', aria-hidden='true')= no
-          button(type='button', class="btn btn-#{status}", id="#{id}_confirm")= yes
+          button(type='button', class='btn btn-default', data-dismiss='modal', aria-hidden='true')= no
+          button(type='button', class="btn btn-default btn-#{status}", id="#{id}_confirm")= yes
 
 //- Parse deck modal
 mixin parse_deck_modal()
@@ -29,7 +29,7 @@ mixin parse_deck_modal()
             option(value='mtgs') MTG Salvation
           textarea#deck_to_parse.form-control
         div.modal-footer
-          button#parse_confirm(type='button', class="btn btn-primary") Parse
+          button#parse_confirm(type='button', class="btn btn-default btn-primary") Parse
 
 //- Deck choice modal
 mixin deck_choice_modal(decks)
@@ -43,7 +43,7 @@ mixin deck_choice_modal(decks)
             for deck in decks
               option(value=deck.id, data=JSON.stringify(deck.cards))= deck.name
         div.modal-footer
-          button#deck_validate.btn Select this deck
+          button#deck_validate.btn.btn-default Select this deck
 
 //- Card choice modal
 mixin card_choice_modal()
@@ -54,4 +54,4 @@ mixin card_choice_modal()
           h3 Pick Cards
         div.modal-body.modal-body-search
         div.modal-footer
-          button#card_choice_validate.btn Select those cards
+          button#card_choice_validate.btn.btn-default Select those cards

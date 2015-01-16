@@ -20,85 +20,69 @@ block navigation
       a.pointer(href='#logout') Log out
 
 block body
+  +chat_widget()
   div#mainframe.playground
     div#helper_block
       div#top_helper_block
         +card_viewer_widget()
-        // opponent
-        div.panel.panel-default.player-stats.op
+        div.message-receiver.top &nbsp;
+
+      // player
+      div#bottom_helper_block
+
+        div.hitpoints-block.btn-group
+          a.btn.btn-default.top.lose.update-hitpoints -
+          span.btn.btn-default.hitpoints-counter.top 20
+          a.btn.btn-default.bottom.gain.update-hitpoints +
+
+        div.infection-block.btn-group
+            a.btn.btn-default.lose.update-infection.bottom(type="button") -
+            span.btn.btn-default.infection-counter.bottom(type="button") 0
+            a.btn.btn-default.gain.update-infection.bottom(type="button") +
+
+        div.player-stats
           table.table.table-striped.table-condensed
             thead
               tr
-                th(colspan='2') OPPONENT PLAYER
+                th Stats
+                th You
+                th Opponent
             tbody
               tr
-                td Life
-                td
-                  span.hitpoints-counter.top 20
-              tr
-                td Infection
-                td
-                  span.infection-counter.top 0
-              tr
                 td Library
-                td
+                td.bottom_helper_block
+                  span.library-counter.bottom 0
+                td.top_helper_block
                   span.library-counter.top 0
               tr
                 td Hand
-                td
+                td.bottom_helper_block
+                  span.hand-counter.bottom 0
+                td.top_helper_block
                   span.hand-counter.top 0
               tr
                 td Graveyard
-                td
+                td.bottom_helper_block
+                  span.graveyard-counter.bottom 0
+                td.top_helper_block
                   span.graveyard-counter.top 0
               tr
                 td Exile
-                td
+                td.bottom_helper_block
+                  span.exile-counter.bottom 0
+                td.top_helper_block
                   span.exile-counter.top 0
               tr
                 td Battlefield
-                td
+                td.bottom_helper_block
+                  span.battlefield-counter.bottom 0
+                td.top_helper_block
                   span.battlefield-counter.top 0
-          div.message-receiver.top &nbsp;
 
-      // player
-      div
-        div#bottom_helper_block
+        div.chat
+          button#chat_trigger.btn.btn-primary(type="button") Chat
 
-          div.hitpoints-block.btn-group
-            a.btn.btn-default.top.lose.update-hitpoints -
-            span.btn.btn-default.hitpoints-counter.top 20
-            a.btn.btn-default.bottom.gain.update-hitpoints +
-
-          div.infection-block.btn-group
-              a.btn.btn-default.lose.update-infection.bottom(type="button") -
-              span.btn.btn-default.infection-counter.bottom(type="button") 0
-              a.btn.btn-default.gain.update-infection.bottom(type="button") +
-
-          div.player-stats
-            table.table.table-striped.table-condensed
-              thead
-                tr
-                  th Lib.
-                  th Hand
-                  th Gravey.
-                  th Exile
-                  th Battle.
-              tbody
-                tr
-                  td
-                    span.library-counter.bottom 0
-                  td
-                    span.hand-counter.bottom 0
-                  td
-                    span.graveyard-counter.bottom 0
-                  td
-                    span.exile-counter.bottom 0
-                  td
-                    span.battlefield-counter.bottom 0
-          div.message-receiver.bottom &nbsp;
-          div.chat
-            +chat_widget_playground()
+        div.message-receiver.bottom &nbsp;
 
     div#game_block.game-area.content
       div#top_game_block.top.player-side
@@ -107,6 +91,20 @@ block body
           div#top_graveyard.graveyard-emplacement.top
           div#top_library.library-emplacement.top
           div#top_hand.hand-emplacement.top
+          div.panel.panel-default.player-stats.op
+            table.table.table-striped.table-condensed
+              thead
+                tr
+                  th(colspan='2') OPPONENT PLAYER
+              tbody
+                tr
+                  td Life
+                  td
+                    span.hitpoints-counter.top 20
+                tr
+                  td Infection
+                  td
+                    span.infection-counter.top 0
         div#top_battlefield.game-emplacement.top.valid-drag-zone
 
       div.nav.navbar-default.playground

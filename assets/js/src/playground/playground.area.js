@@ -133,7 +133,7 @@
 
     this.bindOnCards = function(name, fn) {
       this.$game.on(name, this.cards, fn);
-    }
+    };
 
     // Generic Receptors
     //-------------------
@@ -165,7 +165,7 @@
           utilities.optcall(_this, _this.drop.from, $card);
         else if (_this.name === e.data.to)
           utilities.optcall(_this, _this.drop.to, $card);
-    }
+    };
 
     // DOM Generic Manipulation
     //--------------------------
