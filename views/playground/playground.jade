@@ -9,20 +9,21 @@ include ../templates/cards
 include ../templates/counters
 
 block navigation
-  div.nav.navbar-nav
-    p.navbar-text [GAME-NAME]
-  ul.subnavbar.nav.navbar-nav.navbar-highlight.navbar-right
-    li
-      a.pointer(href='/lobby?pause') Pause Game
-    li
-      a.pointer(href='/lobby?quit') Quit Game
-    li
-      a.pointer(href='#logout') Log out
+  div#mtgnav.collapse.navbar-collapse
+    div.nav.navbar-nav
+      p.navbar-text [GAME-NAME]
+    ul.subnavbar.nav.navbar-nav.navbar-highlight.navbar-right
+      li
+        a.pointer(href='/lobby?pause') Pause Game
+      li
+        a.pointer(href='/lobby?quit') Quit Game
+      li
+        a.pointer(href='#logout') Log out
 
 block body
   +chat_widget()
   div#mainframe.playground
-    div#helper_block
+    div#helper_block.hidden-xs
       div#top_helper_block
         +card_viewer_widget()
         div.message-receiver.top &nbsp;
@@ -91,7 +92,7 @@ block body
           div#top_graveyard.graveyard-emplacement.top
           div#top_library.library-emplacement.top
           div#top_hand.hand-emplacement.top
-          div.panel.panel-default.player-stats.op
+          div.panel.panel-default.player-stats.op.hidden-xs
             table.table.table-striped.table-condensed
               thead
                 tr
@@ -107,12 +108,13 @@ block body
                     span.infection-counter.top 0
         div#top_battlefield.game-emplacement.top.valid-drag-zone
 
-      div.nav.navbar-default.playground
-        +library_menu()
-        +battlefield_menu()
-        +hand_menu()
-        +graveyard_menu()
-        +exile_menu()
+      div#playgroundnav.collapse.navbar-collapse
+        div.nav.navbar-default.playground
+          +library_menu()
+          +battlefield_menu()
+          +hand_menu()
+          +graveyard_menu()
+          +exile_menu()
 
       div#bottom_game_block.bottom.player-side
         div#bottom_battlefield.game-emplacement.bottom.valid-drag-zone
@@ -143,6 +145,7 @@ block contextual_js
   script(type="text/javascript", src="/js/src/plugins/card_viewer.js")
   script(type="text/javascript", src="/js/src/plugins/context_menu.js")
   script(type="text/javascript", src="/js/src/generic/realtime.js")
+  script(type="text/javascript", src="/js/src/generic/detectmobilebrowser.js")
 
   //- Specific
   script(type="text/javascript", src="/js/src/playground/playground.js")

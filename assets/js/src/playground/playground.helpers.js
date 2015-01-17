@@ -63,7 +63,7 @@
         var card = fromModel.shift();
       }
       else {
-        var card = _.remove(fromModel, function(c) {
+        var card = _.remove(fromModel, function (c) {
           return c.id === +id;
         })[0];
       }
@@ -75,6 +75,40 @@
       d[to] = toModel;
 
       return card;
+    },
+
+    // getFluidHeight
+    getFluidTop: function(top){
+      var height=$('#game_block').height();
+      return Math.round(100 * top / height);
+    },
+
+    // getFluidWidth
+    getFluidLeft: function(left){
+      var width=$('#game_block').width();
+      return Math.round(100 * left / width);
+    },
+
+    convertFluidTop: function(fluidTop){
+      var top=(100-fluidTop)/100;
+      return Math.round(top * $('#game_block').height());
+    },
+
+    convertFluidLeft: function(fluidLeft){
+      var left=fluidLeft/100;
+      return Math.round(left * $('#game_block').width());
+    },
+
+    convertTop: function(top,height){
+      var p = (100 * top / height);
+      p=(100-p) / 100;
+      return Math.round(p * $('#game_block').height());
+    },
+
+    convertLeft: function(left,width){
+      var p = (100 * left / width);
+      p=p/100;
+      return Math.round(left * $('#game_block').width());
     }
   };
 

@@ -15,6 +15,14 @@ html
       div.navbar.navbar-inverse.navbar-fixed-top
         div.container
           div.navbar-header
+            button.sidebar-toggle(type='button',data-toggle='collapse',data-target='#playgroundnav')
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            button.navbar-toggle.collapsed(type='button',data-toggle='collapse',data-target='#mtgnav')
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
             div.navbar-brand.alv
               span mtg-node
 
@@ -48,6 +56,7 @@ html
     script(type="text/javascript", src="/js/bower/handlebars/handlebars.min.js")
     script(type="text/javascript", src="/js/bower/lodash/dist/lodash.min.js")
     script(type="text/javascript", src="/js/src/generic/utilities.js")
+    script(type="text/javascript", src="/js/src/generic/navbar.js")
     script(type="text/javascript", src="/js/src/simple/logout.js")
     script(type="text/javascript", src="/js/src/mtgnode.js")
 

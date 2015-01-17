@@ -19,6 +19,9 @@
     // Properties
     this.revealed = false;
     this.baseOffset = 77;
+    if ($.browser.mobile) {
+      this.baseOffset = 38; // mobile card width
+    }
     this.offset = this.baseOffset;
     this.top = (side === 'op') ? 0 : this.$game.height() - this.$library.height();
 
@@ -99,7 +102,7 @@
           );
         }
       }
-    }
+    };
 
     // Drop events
     this.drop = {

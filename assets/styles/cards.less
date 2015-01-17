@@ -13,6 +13,11 @@
   cursor:pointer;
   z-index:40;
 
+  @media (max-width: @screen-sm-max) {
+    width:@card-xs-min-width;
+    height:@card-xs-min-height;
+  }
+
   position: absolute;
   .transform-transition(0.3s);
   .preserve-3d();
@@ -55,12 +60,20 @@
 .card-min-deckbuilder {
   width:@card-min-width;
   height:@card-min-height;
+  @media (max-width: @screen-sm-max) {
+    width:@card-xs-min-width;
+    height:@card-xs-min-height;
+  }
   cursor:pointer;
 }
 
 .card-search {
   width:@card-min-width;
   height:@card-min-height;
+  @media (max-width: @screen-sm-max) {
+    width:@card-xs-min-width;
+    height:@card-xs-min-height;
+  }
   cursor:pointer;
   margin:8px;
   border:2px solid transparent;
@@ -100,12 +113,20 @@
 .front-side {
   margin-top:-(@card-min-height)-1;
   margin-left:1px;
+
+  @media (max-width: @screen-sm-max) {
+    margin-top:-(@card-xs-min-height)-1;
+  }
 }
 
 
 .card-min img {
   width:@card-min-width;
   height:@card-min-height;
+  @media (max-width: @screen-sm-max) {
+    width:@card-xs-min-width;
+    height:@card-xs-min-height;
+  }
   .rounded(4px);
 }
 
@@ -120,4 +141,8 @@
 #card_viewer_widget {
   width: @card-viewer-width;
   height: @card-viewer-height;
+  /*@media (max-width: @screen-sm-max) {
+    width:@card-xs-min-width;
+    height:@card-xs-min-height;
+  }*/
 }

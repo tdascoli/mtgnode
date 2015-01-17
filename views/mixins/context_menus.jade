@@ -10,7 +10,7 @@ mixin battlefield_menu()
   div#battlefield_context_menu.show
     ul.nav.navbar-nav(role='menu', aria-labelledby='battlefield_context_menu')
       li
-        a(data-action='untapAll', href='#', tabindex='-1') Untap all
+        a.playgroundnav(data-action='untapAll', href='#', tabindex='-1') Untap all
 
 mixin library_context_menu()
   div#library_context_menu.dropdown.clearfix.context-menu
@@ -26,11 +26,11 @@ mixin library_menu()
   div#library_context_menu.show
     ul.nav.navbar-nav(role='menu', aria-labelledby='library_context_menu')
       li
-        a(data-action='drawHand', href='#', tabindex='-1') Draw full hand
+        a.playgroundnav(data-action='drawHand', href='#', tabindex='-1') Draw full hand
       li
-        a(data-action='searchCards', href='#', tabindex='-1') Search library
+        a.playgroundnav(data-action='searchCards', href='#', tabindex='-1') Search library
       li
-        a(data-action='shuffle', href='#', tabindex='-1') Shuffle library
+        a.playgroundnav(data-action='shuffle', href='#', tabindex='-1') Shuffle library
 
 mixin graveyard_context_menu()
   div#graveyard_context_menu.dropdown.clearfix.context-menu
@@ -42,7 +42,7 @@ mixin graveyard_menu()
   div#graveyard_context_menu.show
     ul.nav.navbar-nav(role='menu', aria-labelledby='graveyard_context_menu')
       li
-        a(data-action='searchCards', href='#', tabindex='-1') Search graveyard
+        a.playgroundnav(data-action='searchCards', href='#', tabindex='-1') Search graveyard
 
 mixin exile_context_menu()
   div#exile_context_menu.dropdown.clearfix.context-menu
@@ -54,7 +54,7 @@ mixin exile_menu()
   div#exile_context_menu.show
     ul.nav.navbar-nav(role='menu', aria-labelledby='exile_context_menu')
       li
-        a(data-action='searchCards', href='#', tabindex='-1') Search exiled cards
+        a.playgroundnav(data-action='searchCards', href='#', tabindex='-1') Search exiled cards
 
 mixin hand_context_menu()
   div#hand_context_menu.dropdown.clearfix.context-menu
@@ -66,4 +66,4 @@ mixin hand_menu()
   div#hand_context_menu.show
     ul.nav.navbar-nav(role='menu', aria-labelledby='hand_context_menu')
       li
-        a(data-action='revealHand', href='#', tabindex='-1') Reveal hand
+        a.playgroundnav(data-action='revealHand', href='#', tabindex='-1') Reveal hand

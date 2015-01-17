@@ -1,19 +1,20 @@
 extends ../layout
 
 block navigation
-  ul.nav.navbar-nav
-    li.active
-      a.pointer(href='/lobby') Lobby
-    li
-      a.pointer(href='/deck-builder') Deck Builder
+  div#mtgnav.collapse.navbar-collapse
+    ul.nav.navbar-nav
+      li.active
+        a.pointer(href='/lobby') Lobby
+      li
+        a.pointer(href='/deck-builder') Deck Builder
 
-  ul.subnavbar.nav.navbar-nav.navbar-highlight.navbar-right
-    li
-      a.pointer(href='#host_game_modal', data-toggle='modal') Host Game
-    li
-      a.pointer(href='/playground/debug') Game Debug
-    li
-      a.pointer(href='#logout') Log out
+    ul.subnavbar.nav.navbar-nav.navbar-highlight.navbar-right
+      li
+        a.pointer(href='#host_game_modal', data-toggle='modal') Host Game
+      li
+        a.pointer(href='/playground/debug') Game Debug
+      li
+        a.pointer(href='#logout') Log out
 
 block body
   div#mainframe

@@ -100,6 +100,30 @@
     cards: '.card-min > img.front-side'
   });
 
+  // Mobile
+  //-------
+  $(document).ready(function() {
+    if ($.browser.mobile) {
+      var screen = $(window).height();
+      var navbar = $('#topnav .navbar').outerHeight(true) || 0;
+      var height = screen - navbar - 15; // #mainframe - margin-top plus spacing!
+      $('#mainframe').css('height',height);
+      $('#mainframe').css('min-height',height);
+
+      $('#top_game_block').css('height',(height/2));
+      $('#bottom_game_block').css('height',(height/2));
+      $('.game-emplacement').css('height',(height/2)-55); // mobile card height
+
+
+      $('.my.card-min').dblclick(function(){
+        $('#card_viewer_block').show();
+      });
+      $('.op.card-min.in-battlefield').dblclick(function(){
+        $('#card_viewer_block').show();
+      });
+    }
+  });
+
   /**
    * Exporting
    * ----------
