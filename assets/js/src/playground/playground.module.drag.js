@@ -49,8 +49,6 @@
         top: ui.position.top,
         fluidLeft: playground.helpers.getFluidLeft(ui.position.left),
         fluidTop: playground.helpers.getFluidTop(ui.position.top),
-        width: $('#game_block').width(),
-        height: $('#game_block').height(),
         zIndex: $card.css('z-index'),
         id: $card.attr('number')
       };
@@ -67,14 +65,10 @@
 
       // Animating
       $card.css({
-        //left: e.data.left,
-        //top: _this.height - e.data.top - $card.height(),
-        // todo verhältnis anpassen....
         left: playground.helpers.convertFluidLeft(e.data.fluidLeft,$card.width()),
-        top: playground.helpers.convertFluidTop(e.data.fluidTop,$card.height()), //playground.helpers.convertTop(e.data.top,e.data.height) - ($card.height()-2),
+        top: playground.helpers.convertFluidTop(e.data.fluidTop,$card.height()),
         zIndex: e.data.zIndex
       });
-      $card.attr('title',$('#top_game_block').offset().top+'/'+$('#top_game_block').height());
     };
   }
 
