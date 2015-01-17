@@ -89,26 +89,22 @@
       return Math.round(100 * left / width);
     },
 
-    convertFluidTop: function(fluidTop){
+    convertFluidTop: function(fluidTop,cardHeight){
       var top=(100-fluidTop)/100;
-      return Math.round(top * $('#game_block').height());
+      top = Math.round(top * $('#game_block').height());
+      if (top>($('#top_game_block').height()-cardHeight)){
+        return ($('#top_game_block').height()-cardHeight)
+      }
+      return top;
     },
 
-    convertFluidLeft: function(fluidLeft){
+    convertFluidLeft: function(fluidLeft,cardWidth){
       var left=fluidLeft/100;
-      return Math.round(left * $('#game_block').width());
-    },
-
-    convertTop: function(top,height){
-      var p = (100 * top / height);
-      p=(100-p) / 100;
-      return Math.round(p * $('#game_block').height());
-    },
-
-    convertLeft: function(left,width){
-      var p = (100 * left / width);
-      p=p/100;
-      return Math.round(left * $('#game_block').width());
+      left = Math.round(left * $('#game_block').width());
+      if (left>($('#game_block').width()-cardWidth)){
+        return ($('#game_block').width()-cardWidth);
+      }
+      return left;
     }
   };
 

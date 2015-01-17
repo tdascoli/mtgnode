@@ -70,11 +70,11 @@
         //left: e.data.left,
         //top: _this.height - e.data.top - $card.height(),
         // todo verhältnis anpassen....
-        left: playground.helpers.convertFluidLeft(e.data.fluidLeft),
-        top: playground.helpers.convertTop(e.data.top,e.data.height) - $card.height(),
+        left: playground.helpers.convertFluidLeft(e.data.fluidLeft,$card.width()),
+        top: playground.helpers.convertFluidTop(e.data.fluidTop,$card.height()), //playground.helpers.convertTop(e.data.top,e.data.height) - ($card.height()-2),
         zIndex: e.data.zIndex
       });
-      $card.attr('title',e.data.fluidTop+'/'+e.data.top+'/'+e.data.height+'/'+$('#game_block').height()+'/'+playground.helpers.convertFluidTop(e.data.fluidTop));
+      $card.attr('title',$('#top_game_block').offset().top+'/'+$('#top_game_block').height());
     };
   }
 

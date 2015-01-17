@@ -106,12 +106,12 @@
     if ($.browser.mobile) {
       var screen = $(window).height();
       var navbar = $('#topnav .navbar').outerHeight(true) || 0;
-      var height = screen - navbar - 15; // #mainframe - margin-top plus spacing!
+      var height = Math.round((screen - navbar - 15)/2)*2; // #mainframe - margin-top plus spacing!
       $('#mainframe').css('height',height);
       $('#mainframe').css('min-height',height);
 
       $('#top_game_block').css('height',(height/2));
-      $('#bottom_game_block').css('height',(height/2));
+      $('#bottom_game_block').css('height',(height/2)-1);
       $('.game-emplacement').css('height',(height/2)-55); // mobile card height
 
 
