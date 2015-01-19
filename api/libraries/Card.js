@@ -28,7 +28,7 @@ function CardLibrary() {
     return _.find(_cards, function(card) {
       return card.multiverseid === +id;
     });
-  }
+  };
 
   // Search card by criteria
   this.getBy = function(criteria) {
@@ -41,7 +41,7 @@ function CardLibrary() {
         return card[key] === criteria[key];
       }).length == Object.keys(criteria).length;
     });
-  }
+  };
 
   // Batch search card by array
   this.getByIdArray = function(card_array) {
@@ -60,14 +60,14 @@ function CardLibrary() {
 
       return card;
     });
-  }
+  };
 
   // Search by card name
   this.searchByName = function(name) {
     return _cards.filter(function(c) {
       return ~c.name.toLowerCase().indexOf(name.toLowerCase());
     });
-  }
+  };
 
   // Search by card name and set
   this.searchByNameAndSet = function(name, set) {

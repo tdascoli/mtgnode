@@ -23,9 +23,10 @@ block navigation
 block body
   +chat_widget()
   div#mainframe.playground
-    div#helper_block.hidden-xs
+    div#helper_block
       div#top_helper_block
-        +card_viewer_widget()
+        div.card_viewer
+          +card_viewer_widget()
         div.message-receiver.top &nbsp;
 
       // player
@@ -80,13 +81,10 @@ block body
                 td.top_helper_block
                   span.battlefield-counter.top 0
 
-        div.chat
-          button#chat_trigger.btn.btn-primary(type="button") Chat
-
         div.message-receiver.bottom &nbsp;
 
     div#game_block.game-area.content
-      div#top_game_block.top.player-side
+      div#top_game_block.top.player-side(data-toggle="context",data-target="#card_context_menu")
         div#top_handlogic.library-and-hand.top
           div#top_exile.exile-emplacement.top
           div#top_graveyard.graveyard-emplacement.top
@@ -115,6 +113,9 @@ block body
           +hand_menu()
           +graveyard_menu()
           +exile_menu()
+          ul.nav.navbar-nav
+            li
+              a#chat_trigger.pointer Chat
 
       div#bottom_game_block.bottom.player-side
         div#bottom_battlefield.game-emplacement.bottom.valid-drag-zone
@@ -127,6 +128,9 @@ block body
 block modals
   +deck_choice_modal(decks)
   +card_choice_modal()
+  +card_context_modal()
+
+block context_menus
 
 block templates
   +playground_card_template()

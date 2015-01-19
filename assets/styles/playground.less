@@ -30,5 +30,23 @@
 
 #playgroundnav {
   padding: 0;
+}
+@media (max-width: @screen-xs-max) {
+  #top_helper_block {
+    height: auto;
+  }
+  #top_helper_block #card_viewer_block {
+    text-align: center;
+  }
+  #top_helper_block .message-receiver {
+    height: 0;
+  }
+  #card_viewer_block {
+    height: auto;
+  }
+}
 
+img.tap,
+img.untap {
+  height: 1em;
 }

@@ -119,6 +119,16 @@
       from: reorganize
     };
 
+    // Basic
+    this.emitters = function() {
+      // Tapping the cards
+      this.bindOnCards('click', function () {
+        if ($.browser.mobile) {
+          $('#top_helper_block').modal('toggle');
+        }
+      });
+    };
+
     // Receptors
     //-----------
     this.receive('card.drawn', drawCard);

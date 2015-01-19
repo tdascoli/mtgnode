@@ -114,13 +114,10 @@
       $('#bottom_game_block').css('height',(height/2)-1);
       $('.game-emplacement').css('height',(height/2)-55); // mobile card height
 
-
-      $('.my.card-min').dblclick(function(){
-        $('#card_viewer_block').show();
-      });
-      $('.op.card-min.in-battlefield').dblclick(function(){
-        $('#card_viewer_block').show();
-      });
+      $('#top_helper_block').addClass('modal').addClass('fade');
+      $('#top_helper_block .card_viewer').addClass('modal-content');
+      $('#card_viewer_block').addClass('modal-body');
+      $('#bottom_helper_block').hide();
     }
   });
 

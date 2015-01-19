@@ -89,11 +89,11 @@
       return Math.round(100 * left / width);
     },
 
-    convertFluidTop: function(fluidTop,cardHeight){
+    convertFluidTop: function(fluidTop){
       var top=(100-fluidTop)/100;
       top = Math.round(top * $('#game_block').height());
-      if (top>($('#top_game_block').height()-cardHeight)){
-        return ($('#top_game_block').height()-cardHeight)
+      if (top>$('#top_game_block').height()){
+        return $('#top_game_block').height();
       }
       return top;
     },

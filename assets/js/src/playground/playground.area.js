@@ -79,7 +79,7 @@
                   type: 'same',
                   from: cls,
                   to: _this.name,
-                  id: +$card.attr('number'),
+                  id: +$card.attr('number')
                 });
               }
               else {
@@ -97,6 +97,15 @@
               }
             }
           });
+      }
+      else {
+        if ($.browser.mobile) {
+          this.$game.on('click', this.cards, function () {
+            if ($(this).hasClass('in-battlefield')){
+              $('#top_helper_block').modal('toggle');
+            }
+          });
+        }
       }
     };
 

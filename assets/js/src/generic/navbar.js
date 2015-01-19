@@ -9,3 +9,4 @@ $(document).on('click','.navbar-collapse.in',function(e) {
 $('a.playgroundnav').click(function(){
     $('#playgroundnav').collapse('hide');
 });
+

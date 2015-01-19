@@ -66,7 +66,7 @@
       // Animating
       $card.css({
         left: playground.helpers.convertFluidLeft(e.data.fluidLeft,$card.width()),
-        top: playground.helpers.convertFluidTop(e.data.fluidTop,$card.height()),
+        top: playground.helpers.convertFluidTop(e.data.fluidTop)-$card.height(),
         zIndex: e.data.zIndex
       });
     };

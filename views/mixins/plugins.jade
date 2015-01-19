@@ -3,6 +3,8 @@
 mixin card_viewer_widget()
   div#card_viewer_block
     img#card_viewer_widget(src='/images/card-back.jpeg')
+  div.modal-footer.visible-xs-block
+    button.btn.btn-default(type='button',data-dismiss='modal') Close
 
 mixin chat_widget()
   div#chat_container.hide

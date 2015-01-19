@@ -29,6 +29,7 @@ mixin parse_deck_modal()
             option(value='mtgs') MTG Salvation
           textarea#deck_to_parse.form-control
         div.modal-footer
+          button.btn.btn-default(type='button',data-dismiss='modal') Close
           button#parse_confirm(type='button', class="btn btn-default btn-primary") Parse
 
 //- Deck choice modal
@@ -54,4 +55,23 @@ mixin card_choice_modal()
           h3 Pick Cards
         div.modal-body.modal-body-search
         div.modal-footer
+          button.btn.btn-default(type='button',data-dismiss='modal') Close
           button#card_choice_validate.btn.btn-default Select those cards
+
+//- Card context modal for mobile
+mixin card_context_modal()
+  div#card_context_modal.modal.fade
+    div.modal-dialog
+      div.modal-content
+        div.modal-body
+          button#tap.btn.btn-default.btn-block(type='button',data-dismiss='modal')
+            img.tap(src='http://mtgimage.com/symbol/other/t.svg')
+            span.tap &nbsp;Tap card
+            img.untap(src='http://mtgimage.com/symbol/other/q.svg')
+            span.untap &nbsp;Untap card
+          button.btn.btn-default.btn-block(type='button',data-dismiss='modal',data-toggle='modal',data-target="#top_helper_block")
+            span.glyphicon.glyphicon-search(aria-hidden='true')
+            span &nbsp;Show Card
+
+        div.modal-footer
+          button.btn.btn-default(type='button',data-dismiss='modal') Close

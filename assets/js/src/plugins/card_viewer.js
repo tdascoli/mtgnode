@@ -44,6 +44,17 @@
           self._currentSrc = requested_src;
         }
       });
+
+      // Registering mobile event
+      /*
+      if ($.browser.mobile) {
+        $(this.settings.container).on('taphold', this.settings.cards, function () {
+          if ($(this).parent().hasClass('in-battlefield') || ($(this).parent().hasClass('my') && $(this).parent().hasClass('in-hand'))){
+            $('#top_helper_block').addClass('in');
+          }
+        });
+      }
+      */
     }
   };
 
